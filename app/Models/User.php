@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 use Laravel\Lumen\Auth\Authorizable;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
+
 class User extends Model implements AuthenticatableContract, JWTSubject
 {
     use Authenticatable, Authorizable, HasFactory;

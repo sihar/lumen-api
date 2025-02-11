@@ -1,0 +1,92 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Lumen Swagger",
+        "description": "Lumen Swagger OpenAPI description",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/login": {
+            "post": {
+                "tags": [
+                    "auth"
+                ],
+                "operationId": "/login",
+                "parameters": [
+                    {
+                        "name": "email",
+                        "in": "path",
+                        "description": "email as username",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "xxx@email.com"
+                        }
+                    },
+                    {
+                        "name": "password",
+                        "in": "path",
+                        "description": "password",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "example": "xxx"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns authentication response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "": {
+                                            "$ref": "#/components/schemas/AuthResponseData"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AuthRequestData": {
+                "properties": {
+                    "email": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "AuthRequestData"
+                }
+            },
+            "AuthResponseData": {
+                "properties": {
+                    "access_token": {
+                        "type": "string"
+                    },
+                    "token_type": {
+                        "type": "string"
+                    },
+                    "expires_in": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object",
+                "xml": {
+                    "name": "AuthResponseData"
+                }
+            }
+        }
+    }
+}
