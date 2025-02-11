@@ -1,4 +1,4 @@
-# Microservice API PHP
+# Microservice API using Lumen Framework (PHP)
 
 ## Setup
 1. Clone this repository
